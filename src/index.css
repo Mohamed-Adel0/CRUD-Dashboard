@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+.debug {
+  border: 1px solid red;
+}
+@theme {
+  /* Light Mode */
+  --color-primary-txt: #000;
+  --color-secondary-txt: #868686;
+  --color-third-txt: #feaf00;
+  --color-primary-bg: #fff;
+  --color-secondary-bg: #f8f8f8;
+  --color-third-bg: #ececec;
+  --color-primary-btn-bg: #feaf00;
+
+  /* Dark Mode */
+  --color-primary-txt-dark: #ffffff;
+  --color-secondary-txt-dark: #c9c9c9;
+  --color-third-txt-dark: #d39000;
+  --color-primary-bg-dark: #0f0f0f;
+  --color-secondary-bg-dark: #141414;
+  --color-third-bg-dark: #2b2b2b;
+  --color-primary-btn-bg-dark: #d39000;
+}
+
+.userForm h1 {
+  color: var(--color-primary-txt);
+  position: relative;
+}
+.userForm h1::before {
+  background-color: var(--color-primary-btn-bg);
+  border-radius: 0.5rem;
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 26px;
+  left: -10px;
+  top: 5px;
+}
+.userForm button {
+  background-color: var(--color-primary-btn-bg);
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+.userForm button:hover {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-btn-bg);
+}
+
+.userForm form label {
+  color: var(--color-primary-txt);
+}
+
+.userForm form input:not(.img) {
+  border: 1px solid var(--color-secondary-txt);
+  transition: 0.3s ease-out;
+}
+.userForm form input:focus {
+  outline-color: var(--color-primary-btn-bg);
+  caret-color: var(--color-primary-btn-bg);
+}
+
+.img {
+  cursor: pointer;
+  border: 2px dashed var(--color-primary-btn-bg);
+}
+
+/* productForms */
+.productForms h1::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 5px;
+  height: 30px;
+  background-color: var(--color-primary-btn-bg);
+}
+
+/* product& user modal */
+/* .modal-details {
+  @apply capitalize space-y-3 [&_span]:mr-2 [&_span]:font-semibold [&_span]:text-black dark:[&_span]:text-white [&_p]:text-secondary-txt;
+} */
